@@ -1,0 +1,41 @@
+site_name: LAB # 你的網站名稱，會顯示在瀏覽器分頁和導覽列上
+
+theme:
+  name: material # 指定使用 Material for MkDocs 主題
+  locale: zh # 將網站介面語言設定為中文，例如搜尋提示、切換按鈕文字等
+
+  # 設定網站的色彩調色盤
+  palette:
+    # 預設的明亮模式配色
+    - media: "(prefers-color-scheme: light)" # 當系統偏好設定為明亮模式時啟用
+      scheme: default # 使用 Material Design 的預設明亮方案
+      primary: teal # 設定主要顏色，例如導覽列、標題等，選用「青綠色」
+      accent: deep orange # 設定輔助顏色，例如被選中的項目或連結，選用「深橘色」
+      toggle:
+        icon: material/brightness-7 # 明亮模式切換按鈕的圖示 (一個太陽)
+        name: 切換到黑暗模式 # 按鈕的提示文字
+
+    # 黑暗模式配色
+    - media: "(prefers-color-scheme: dark)" # 當系統偏好設定為黑暗模式時啟用
+      scheme: slate # 使用 Material Design 的石板灰黑暗方案
+      primary: blue # 黑暗模式下的主要顏色，選用「藍色」
+      accent: light blue # 黑暗模式下的輔助顏色，選用「淺藍色」
+      toggle:
+        icon: material/brightness-4 # 黑暗模式切換按鈕的圖示 (一個月亮)
+        name: 切換到明亮模式 # 按鈕的提示文字
+
+  # 啟用 Material for MkDocs 的實用功能
+  features:
+    - navigation.tabs # 啟用頂部導覽列的「標籤式」導覽，讓頂級頁面顯示為標籤
+    - navigation.sections # 讓側邊導覽列的區塊可以展開/折疊，方便管理大量內容
+    - navigation.top # 啟用點擊頁面標題時，自動捲動回頁面頂部的功能
+    - search.suggest # 在搜尋框輸入時，顯示搜尋建議
+    - search.highlight # 搜尋結果中的關鍵字會被高亮顯示
+    - content.code.copy # 在程式碼區塊右上方顯示「複製」按鈕，方便使用者複製程式碼
+
+# 外掛設定
+plugins:
+  - search:
+      lang:
+        - en # 支援英文搜尋
+        - zh # 支援中文搜尋 (非常重要，否則中文內容無法被索引和搜尋)
